@@ -32,11 +32,13 @@ class BustedOperation < NSOperation
   end
   
   def exit!
+    puts "exiting operation..."
     self.done = true
   end
   
   def perform_task
     TaskPerformer.perform_task
+    puts "performed task"
     exit!
   end
 end
